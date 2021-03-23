@@ -1,16 +1,17 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import "./App.css";
+import HomePage from './pages/homepage/homepage.jsx';
 
 
-const HomePage = props => {
-  return(
-    <div>
-      <button onClick={() => props.history.push('/topics')}>Topics</button>
-      <h1>Home Page</h1>
-    </div>
-  );
-};
+// const HomePage = props => {
+//   return(
+//     <div>
+//       <button onClick={() => props.history.push('/topics')}>Topics</button>
+//       <h1>Home Page</h1>
+//     </div>
+//   );
+// };
 
 const TopicsList = () => {
   return(
@@ -25,16 +26,25 @@ const TopicDetail = () => {
     <div>
       <h1>Topic Detail Page</h1>
     </div>
+);
+};
+
+const HatsPage = () => {
+  return(
+    <div>
+      <h1>HATS PAGE</h1>
+    </div>
   );
 };
 
 function App() {
   return (
-    <div>
+    <Switch>
       <Route exact path='/' component={HomePage}/>
       <Route exact path='/topics' component={TopicsList}/>
       <Route path='/topics/:topicId' component={TopicDetail}/>
-    </div>
+      <Route exact path='/hats' component={HatsPage}/>
+    </Switch>
   );
 }
 
