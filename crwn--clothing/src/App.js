@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import "./App.css";
 import HomePage from './pages/homepage/homepage.jsx';
+import ShopPage from './pages/shop/shop.jsx';
 
 
 // const HomePage = props => {
@@ -29,13 +30,13 @@ const TopicDetail = () => {
 );
 };
 
-const HatsPage = () => {
-  return(
-    <div>
-      <h1>HATS PAGE</h1>
-    </div>
-  );
-};
+// const HatsPage = () => {
+//   return(
+//     <div>
+//       <h1>HATS PAGE</h1>
+//     </div>
+//   );
+// };
 
 function App() {
   return (
@@ -43,7 +44,7 @@ function App() {
       <Route exact path='/' component={HomePage}/>
       <Route exact path='/topics' component={TopicsList}/>
       <Route path='/topics/:topicId' component={TopicDetail}/>
-      <Route exact path='/hats' component={HatsPage}/>
+      <Route exact path='/shop' component={ShopPage}/>
     </Switch>
   );
 }
